@@ -1,0 +1,30 @@
+<style>
+  .content{
+    display:none;
+  }
+  .show{
+    display:block;
+  }
+</style>
+<button onclick="myFunction()" class="dropbtn">Dropdown</button>
+<div id="dropdown" class="content">
+  <a href="">Profile</a>
+  <a href="">Logout</a>
+</div>
+<script>
+  function myFunction(){
+  document.getElementById('dropdown').classList.toggle('show');
+}
+  window.onclick = function(event) {
+    if(!event.target.matches('.dropbtn')){
+     var dropdownContent = document.getElementsByClassName('content');
+     var i;
+     for(i=0; i<dropdownContent.length; i++){
+       var lengthCount = dropdownContent[i];
+       if (lengthCount.classList.contains('show')) {
+        lengthCount.classList.remove('show');
+      }
+     }
+    }
+  }
+</script>
